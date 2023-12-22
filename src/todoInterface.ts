@@ -3,6 +3,12 @@
  * 待辦事項介面應該包含 id、task 和 completed 三個屬性，分別為數字型別、字串型別和布林型別。
  */
 
+ interface Todo {
+    id: number;
+    task: string;
+    completed: boolean;
+}
+
 /**
  * 新增待辦事項
  * @param todos - 現有的待辦事項陣列
@@ -13,7 +19,12 @@
  * 輸出: [{ id: 1, task: 'Buy milk', completed: false }, { id: 2, task: 'Walk the dog', completed: false }]
  */
 
-export function addTodo(todos: Todo[], task: string): Todo[] {
-    // 在此實現函式
+ export function addTodo(todos: Todo[], task: string): Todo[] {
+    const newTodo: Todo = {
+        id: todos.length + 1,  // 確保每個待辦事項都有唯一的 id
+        task: task,
+        completed: false
+    };
+
     return [...todos, newTodo];
 }

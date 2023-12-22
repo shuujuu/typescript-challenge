@@ -10,4 +10,5 @@
 
 export function processMultiArray(arr) {
     // 在此實現函式
+    return arr.map(item => item.map(i => i * 2));
 }
