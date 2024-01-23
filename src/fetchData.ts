@@ -6,4 +6,15 @@
  */
 
 // 請在下方寫下你的程式碼
-
+export async function fetchData(url: string): Promise<any> {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Fetching data failed:', error);
+        throw error;
+    }
+}

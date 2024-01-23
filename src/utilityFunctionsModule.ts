@@ -9,6 +9,12 @@
  */
 export function formatDate(date: Date): string {
     // 請在此處寫下你的程式碼
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;  // 加1是因為 getMonth() 從 0 開始計算
+    const day = date.getDate();
+
+    // 使用模板字串來格式化日期，並確保月份和日期是兩位數
+    return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
 }
 
 /**
@@ -22,4 +28,5 @@ export function formatDate(date: Date): string {
  */
 export function roundNumber(num: number): number {
     // 請在此處寫下你的程式碼
+    return Math.round(num);
 }
